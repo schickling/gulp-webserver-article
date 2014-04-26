@@ -6,7 +6,8 @@ var gulp = require('gulp'),
 
 gulp.task('webserver', function() {
   connect.server({
-    livereload: true
+    livereload: true,
+    root: ['.', '.tmp']
   });
 });
 
@@ -19,13 +20,13 @@ gulp.task('livereload', function() {
 gulp.task('less', function() {
   gulp.src('styles/main.less')
     .pipe(less())
-    .pipe(gulp.dest('styles'));
+    .pipe(gulp.dest('.tmp/styles'));
 });
 
 gulp.task('coffee', function() {
   gulp.src('scripts/*.coffee')
     .pipe(coffee())
-    .pipe(gulp.dest('scripts'));
+    .pipe(gulp.dest('.tmp/scripts'));
 });
 
 gulp.task('watch', function() {
