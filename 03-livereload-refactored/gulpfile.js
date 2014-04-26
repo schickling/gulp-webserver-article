@@ -12,7 +12,7 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('livereload', function() {
-  gulp.src(['styles/*.css', 'scripts/*.js'])
+  gulp.src(['.tmp/styles/*.css', '.tmp/scripts/*.js'])
     .pipe(watch())
     .pipe(connect.reload());
 });
